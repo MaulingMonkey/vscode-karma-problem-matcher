@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "presentation": {
+        "clear": true
+    },
+    "tasks": [
+        { "label": "compile",   "group": "build", "type": "shell", "command": "npm run compile", "problemMatcher": ["$tsc"] },
+        { "label": "watch",     "group": "build", "type": "shell", "command": "npm run watch",   "problemMatcher": ["$tsc-watch"], "isBackground": true },
+        { "label": "check",     "group": "build", "type": "shell", "command": "npm run check",   "problemMatcher": ["$tslint5"] },
+        { "label": "test:only", "group": "test", "type": "shell", "command": "npx mocha --require ts-node/register --require test/helpers/patternSeq test/**/*.test.ts", "options": { "env": { "TS_NODE_FILES": "true" } }, "problemMatcher": [] },
+        { "label": "test:js",   "group": "test", "type": "shell", "command": "npm run test:js", "problemMatcher": [] },
+    ]
+}
